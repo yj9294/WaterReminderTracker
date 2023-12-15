@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import AppTrackingTransparency
 import ComposableArchitecture
 
 struct HomeReducer: Reducer {
@@ -58,6 +59,9 @@ struct HomeView: View {
             VStack{
                 ContentView(store: store)
                 TabbarView(store: store).background(.white)
+            }
+        }.onAppear {
+            ATTrackingManager.requestTrackingAuthorization { _ in
             }
         }
     }
