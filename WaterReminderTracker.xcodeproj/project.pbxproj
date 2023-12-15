@@ -1,0 +1,469 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C76C2D382B160462002DEDA1 /* WaterReminderTrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C2D372B160462002DEDA1 /* WaterReminderTrackerApp.swift */; };
+		C76C2D3A2B160462002DEDA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76C2D392B160462002DEDA1 /* ContentView.swift */; };
+		C76C2D3C2B160464002DEDA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C76C2D3B2B160464002DEDA1 /* Assets.xcassets */; };
+		C76C2D3F2B160464002DEDA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C76C2D3E2B160464002DEDA1 /* Preview Assets.xcassets */; };
+		C76C2D472B1610D0002DEDA1 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = C76C2D462B1610D0002DEDA1 /* ComposableArchitecture */; };
+		C7D291352B18B3B700A6B2D8 /* DatePickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C7D291342B18B3B700A6B2D8 /* DatePickerView.xib */; };
+		C7D291372B18B96500A6B2D8 /* NotificationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D291362B18B96400A6B2D8 /* NotificationUtil.swift */; };
+		C7D864A92B161D4F0098B607 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864A82B161D4F0098B607 /* LaunchView.swift */; };
+		C7D864AB2B161D550098B607 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864AA2B161D550098B607 /* HomeView.swift */; };
+		C7D864AD2B16D7360098B607 /* HomeNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864AC2B16D7360098B607 /* HomeNavigationView.swift */; };
+		C7D864B12B16DDC10098B607 /* DrinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864B02B16DDC10098B607 /* DrinkView.swift */; };
+		C7D864B32B16DDCB0098B607 /* ChartsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864B22B16DDCB0098B607 /* ChartsView.swift */; };
+		C7D864B52B16DDD30098B607 /* ReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864B42B16DDD30098B607 /* ReminderView.swift */; };
+		C7D864B72B16E6E00098B607 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864B62B16E6E00098B607 /* Helper.swift */; };
+		C7D864B92B170D650098B607 /* DrinkGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864B82B170D650098B607 /* DrinkGoalView.swift */; };
+		C7D864BB2B172C2A0098B607 /* DrinkRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864BA2B172C2A0098B607 /* DrinkRecordView.swift */; };
+		C7D864BD2B1747820098B607 /* DrinkRecordHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864BC2B1747820098B607 /* DrinkRecordHistoryView.swift */; };
+		C7F5DF732B2C25D6009FDE63 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C7F5DF722B2C25D6009FDE63 /* FacebookAEM */; };
+		C7F5DF752B2C25D6009FDE63 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C7F5DF742B2C25D6009FDE63 /* FacebookBasics */; };
+		C7F5DF772B2C25D6009FDE63 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C7F5DF762B2C25D6009FDE63 /* FacebookCore */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		C76C2D342B160462002DEDA1 /* WaterReminderTracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterReminderTracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C76C2D372B160462002DEDA1 /* WaterReminderTrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterReminderTrackerApp.swift; sourceTree = "<group>"; };
+		C76C2D392B160462002DEDA1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		C76C2D3B2B160464002DEDA1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C76C2D3E2B160464002DEDA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		C7D291342B18B3B700A6B2D8 /* DatePickerView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerView.xib; sourceTree = "<group>"; };
+		C7D291362B18B96400A6B2D8 /* NotificationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationUtil.swift; sourceTree = "<group>"; };
+		C7D291382B18BBEE00A6B2D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		C7D864A82B161D4F0098B607 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		C7D864AA2B161D550098B607 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		C7D864AC2B16D7360098B607 /* HomeNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeNavigationView.swift; sourceTree = "<group>"; };
+		C7D864B02B16DDC10098B607 /* DrinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkView.swift; sourceTree = "<group>"; };
+		C7D864B22B16DDCB0098B607 /* ChartsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartsView.swift; sourceTree = "<group>"; };
+		C7D864B42B16DDD30098B607 /* ReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReminderView.swift; sourceTree = "<group>"; };
+		C7D864B62B16E6E00098B607 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		C7D864B82B170D650098B607 /* DrinkGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkGoalView.swift; sourceTree = "<group>"; };
+		C7D864BA2B172C2A0098B607 /* DrinkRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkRecordView.swift; sourceTree = "<group>"; };
+		C7D864BC2B1747820098B607 /* DrinkRecordHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkRecordHistoryView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C76C2D312B160462002DEDA1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7F5DF752B2C25D6009FDE63 /* FacebookBasics in Frameworks */,
+				C7F5DF732B2C25D6009FDE63 /* FacebookAEM in Frameworks */,
+				C76C2D472B1610D0002DEDA1 /* ComposableArchitecture in Frameworks */,
+				C7F5DF772B2C25D6009FDE63 /* FacebookCore in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C76C2D2B2B160462002DEDA1 = {
+			isa = PBXGroup;
+			children = (
+				C76C2D362B160462002DEDA1 /* WaterReminderTracker */,
+				C76C2D352B160462002DEDA1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C76C2D352B160462002DEDA1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C76C2D342B160462002DEDA1 /* WaterReminderTracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C76C2D362B160462002DEDA1 /* WaterReminderTracker */ = {
+			isa = PBXGroup;
+			children = (
+				C7D291382B18BBEE00A6B2D8 /* Info.plist */,
+				C76C2D372B160462002DEDA1 /* WaterReminderTrackerApp.swift */,
+				C7D864B62B16E6E00098B607 /* Helper.swift */,
+				C76C2D392B160462002DEDA1 /* ContentView.swift */,
+				C7D864A82B161D4F0098B607 /* LaunchView.swift */,
+				C7D864AC2B16D7360098B607 /* HomeNavigationView.swift */,
+				C7D864AA2B161D550098B607 /* HomeView.swift */,
+				C7D864B02B16DDC10098B607 /* DrinkView.swift */,
+				C7D864BA2B172C2A0098B607 /* DrinkRecordView.swift */,
+				C7D864B82B170D650098B607 /* DrinkGoalView.swift */,
+				C7D864BC2B1747820098B607 /* DrinkRecordHistoryView.swift */,
+				C7D864B22B16DDCB0098B607 /* ChartsView.swift */,
+				C7D864B42B16DDD30098B607 /* ReminderView.swift */,
+				C7D291362B18B96400A6B2D8 /* NotificationUtil.swift */,
+				C7D291342B18B3B700A6B2D8 /* DatePickerView.xib */,
+				C76C2D3B2B160464002DEDA1 /* Assets.xcassets */,
+				C76C2D3D2B160464002DEDA1 /* Preview Content */,
+			);
+			path = WaterReminderTracker;
+			sourceTree = "<group>";
+		};
+		C76C2D3D2B160464002DEDA1 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				C76C2D3E2B160464002DEDA1 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C76C2D332B160462002DEDA1 /* WaterReminderTracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C76C2D422B160464002DEDA1 /* Build configuration list for PBXNativeTarget "WaterReminderTracker" */;
+			buildPhases = (
+				C76C2D302B160462002DEDA1 /* Sources */,
+				C76C2D312B160462002DEDA1 /* Frameworks */,
+				C76C2D322B160462002DEDA1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WaterReminderTracker;
+			packageProductDependencies = (
+				C76C2D462B1610D0002DEDA1 /* ComposableArchitecture */,
+				C7F5DF722B2C25D6009FDE63 /* FacebookAEM */,
+				C7F5DF742B2C25D6009FDE63 /* FacebookBasics */,
+				C7F5DF762B2C25D6009FDE63 /* FacebookCore */,
+			);
+			productName = WaterReminderTracker;
+			productReference = C76C2D342B160462002DEDA1 /* WaterReminderTracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C76C2D2C2B160462002DEDA1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					C76C2D332B160462002DEDA1 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
+				};
+			};
+			buildConfigurationList = C76C2D2F2B160462002DEDA1 /* Build configuration list for PBXProject "WaterReminderTracker" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C76C2D2B2B160462002DEDA1;
+			packageReferences = (
+				C76C2D452B1610CE002DEDA1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				C7F5DF712B2C25D6009FDE63 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
+			productRefGroup = C76C2D352B160462002DEDA1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C76C2D332B160462002DEDA1 /* WaterReminderTracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C76C2D322B160462002DEDA1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7D291352B18B3B700A6B2D8 /* DatePickerView.xib in Resources */,
+				C76C2D3F2B160464002DEDA1 /* Preview Assets.xcassets in Resources */,
+				C76C2D3C2B160464002DEDA1 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C76C2D302B160462002DEDA1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C7D291372B18B96500A6B2D8 /* NotificationUtil.swift in Sources */,
+				C7D864B32B16DDCB0098B607 /* ChartsView.swift in Sources */,
+				C76C2D3A2B160462002DEDA1 /* ContentView.swift in Sources */,
+				C7D864AB2B161D550098B607 /* HomeView.swift in Sources */,
+				C7D864BD2B1747820098B607 /* DrinkRecordHistoryView.swift in Sources */,
+				C7D864BB2B172C2A0098B607 /* DrinkRecordView.swift in Sources */,
+				C7D864A92B161D4F0098B607 /* LaunchView.swift in Sources */,
+				C7D864B92B170D650098B607 /* DrinkGoalView.swift in Sources */,
+				C7D864B12B16DDC10098B607 /* DrinkView.swift in Sources */,
+				C7D864B72B16E6E00098B607 /* Helper.swift in Sources */,
+				C76C2D382B160462002DEDA1 /* WaterReminderTrackerApp.swift in Sources */,
+				C7D864B52B16DDD30098B607 /* ReminderView.swift in Sources */,
+				C7D864AD2B16D7360098B607 /* HomeNavigationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		C76C2D402B160464002DEDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C76C2D412B160464002DEDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C76C2D432B160464002DEDA1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterReminderTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterReminderTracker/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trackerpromax.lovehabits;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		C76C2D442B160464002DEDA1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WaterReminderTracker/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterReminderTracker/Info.plist;
+				INFOPLIST_KEY_NSUserTrackingUsageDescription = "Please allow access to your activity tracking to provide personalized push services and reduce interference caused by irrelevant services.";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.trackerpromax.lovehabits;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C76C2D2F2B160462002DEDA1 /* Build configuration list for PBXProject "WaterReminderTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C76C2D402B160464002DEDA1 /* Debug */,
+				C76C2D412B160464002DEDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C76C2D422B160464002DEDA1 /* Build configuration list for PBXNativeTarget "WaterReminderTracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C76C2D432B160464002DEDA1 /* Debug */,
+				C76C2D442B160464002DEDA1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C76C2D452B1610CE002DEDA1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+		C7F5DF712B2C25D6009FDE63 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C76C2D462B1610D0002DEDA1 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C76C2D452B1610CE002DEDA1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		C7F5DF722B2C25D6009FDE63 /* FacebookAEM */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7F5DF712B2C25D6009FDE63 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookAEM;
+		};
+		C7F5DF742B2C25D6009FDE63 /* FacebookBasics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7F5DF712B2C25D6009FDE63 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookBasics;
+		};
+		C7F5DF762B2C25D6009FDE63 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7F5DF712B2C25D6009FDE63 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = C76C2D2C2B160462002DEDA1 /* Project object */;
+}

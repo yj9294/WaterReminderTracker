@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Gxs-8N-GY2" customClass="DateView" customModule="WaterReminderTracker" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="343" height="343"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QW4-Tm-H0Z">
+                    <rect key="frame" x="58" y="227" width="227" height="74"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="SAVE" backgroundImage="reminder_button_bg"/>
+                    <connections>
+                        <action selector="saveAction" destination="Gxs-8N-GY2" eventType="touchUpInside" id="lI7-cK-x3K"/>
+                    </connections>
+                </button>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cTr-D7-ECw">
+                    <rect key="frame" x="208" y="0.0" width="90" height="227"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="8zU-PY-wIR"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="Gxs-8N-GY2" id="7Hy-Aq-j0D"/>
+                        <outlet property="delegate" destination="Gxs-8N-GY2" id="gjD-B0-a0Z"/>
+                    </connections>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kuu-5M-5rR">
+                    <rect key="frame" x="73" y="0.0" width="90" height="227"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="90" id="CT2-su-6Qi"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="Gxs-8N-GY2" id="Yn4-ag-8Ud"/>
+                        <outlet property="delegate" destination="Gxs-8N-GY2" id="KqR-cp-7WR"/>
+                    </connections>
+                </pickerView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aKr-j4-mJH">
+                    <rect key="frame" x="32" y="90" width="30" height="34"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="AM">
+                        <color key="titleColor" red="0.68235294117647061" green="0.74117647058823533" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.17254901960784313" green="0.72156862745098038" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AHd-5C-oNT">
+                    <rect key="frame" x="32" y="130" width="30" height="34"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="PM">
+                        <color key="titleColor" red="0.68235294120000001" green="0.74117647060000003" blue="0.78039215689999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                    <state key="selected">
+                        <color key="titleColor" red="0.17254901959999999" green="0.72156862749999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </state>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mEd-g0-MDH">
+                    <rect key="frame" x="296" y="0.0" width="44" height="34"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="reminder_close"/>
+                    <connections>
+                        <action selector="cancelAction" destination="Gxs-8N-GY2" eventType="touchUpInside" id="uZv-PY-Txh"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vJH-Gs-g6c"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="AHd-5C-oNT" firstAttribute="centerX" secondItem="aKr-j4-mJH" secondAttribute="centerX" id="4FP-Hd-uoQ"/>
+                <constraint firstItem="vJH-Gs-g6c" firstAttribute="bottom" secondItem="QW4-Tm-H0Z" secondAttribute="bottom" constant="8" id="B94-mb-Tof"/>
+                <constraint firstItem="aKr-j4-mJH" firstAttribute="top" secondItem="Gxs-8N-GY2" secondAttribute="top" constant="90" id="DTR-Og-RTL"/>
+                <constraint firstItem="AHd-5C-oNT" firstAttribute="top" secondItem="aKr-j4-mJH" secondAttribute="bottom" constant="6" id="KLl-lf-fgU"/>
+                <constraint firstItem="QW4-Tm-H0Z" firstAttribute="top" secondItem="Kuu-5M-5rR" secondAttribute="bottom" id="P4s-AG-yCL"/>
+                <constraint firstItem="mEd-g0-MDH" firstAttribute="top" secondItem="Gxs-8N-GY2" secondAttribute="top" id="QSn-Sh-sTS"/>
+                <constraint firstItem="Kuu-5M-5rR" firstAttribute="top" secondItem="Gxs-8N-GY2" secondAttribute="top" id="UOs-i0-t5d"/>
+                <constraint firstItem="aKr-j4-mJH" firstAttribute="leading" secondItem="Gxs-8N-GY2" secondAttribute="leading" constant="32" id="azo-Pn-pII"/>
+                <constraint firstItem="cTr-D7-ECw" firstAttribute="leading" secondItem="Kuu-5M-5rR" secondAttribute="trailing" constant="45" id="bhh-9H-Dmy"/>
+                <constraint firstItem="QW4-Tm-H0Z" firstAttribute="top" secondItem="cTr-D7-ECw" secondAttribute="bottom" id="biP-wh-DSe"/>
+                <constraint firstItem="QW4-Tm-H0Z" firstAttribute="centerX" secondItem="Gxs-8N-GY2" secondAttribute="centerX" id="g3G-RU-kDf"/>
+                <constraint firstItem="cTr-D7-ECw" firstAttribute="top" secondItem="Gxs-8N-GY2" secondAttribute="top" id="gSJ-5x-LCp"/>
+                <constraint firstAttribute="trailing" secondItem="mEd-g0-MDH" secondAttribute="trailing" constant="3" id="lTO-mS-K3C"/>
+                <constraint firstItem="vJH-Gs-g6c" firstAttribute="trailing" secondItem="cTr-D7-ECw" secondAttribute="trailing" constant="45" id="lm3-SA-n93"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="amLabel" destination="aKr-j4-mJH" id="J7E-gy-5cW"/>
+                <outlet property="hourView" destination="Kuu-5M-5rR" id="tNh-hE-vFV"/>
+                <outlet property="minuView" destination="cTr-D7-ECw" id="2Bi-5d-AeY"/>
+                <outlet property="pmLabel" destination="AHd-5C-oNT" id="NFQ-uG-uzH"/>
+            </connections>
+            <point key="canvasLocation" x="123" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="reminder_button_bg" width="227" height="74"/>
+        <image name="reminder_close" width="20" height="20"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
