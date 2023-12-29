@@ -6,7 +6,7 @@
 //
 
 import SwiftUI
-
+import GADUtil
 import ComposableArchitecture
 
 struct ChartsReducer: Reducer {
@@ -19,7 +19,7 @@ struct ChartsReducer: Reducer {
     
     struct State: Equatable {
         static func == (lhs: ChartsReducer.State, rhs: ChartsReducer.State) -> Bool {
-            lhs.records == rhs.records && lhs.item == rhs.item
+            lhs.records == rhs.records && lhs.item == rhs.item && lhs.adModel == rhs.adModel
         }
         
         @UserDefault(key: "drink.records")
@@ -27,7 +27,7 @@ struct ChartsReducer: Reducer {
         let items: [Item] = Item.allCases
         var item: Item = .day
         var menusource: [Int] = Array(0..<7)
-
+        var adModel: GADNativeViewModel = .none
     }
     enum Action: Equatable {
         case pushRecordHistoryView
@@ -195,13 +195,24 @@ struct ChartsView: View {
     let store: StoreOf<ChartsReducer>
     var body: some View {
         WithViewStore(store, observe: {$0}) { viewStore in
-            VStack(spacing: 0){
-                HStack{
-                    ButtonView(store: store)
-                }.padding(.vertical, 8).background(Color.white.cornerRadius(16)).padding(.all, 20)
-                ContentView(store: store).padding(.horizontal, 20)
+            VStack{
+                ScrollView{
+                    VStack(spacing: 0){
+                        HStack{
+                            ButtonView(store: store)
+                        }.padding(.vertical, 8).background(Color.white.cornerRadius(16)).padding(.all, 20)
+                        ContentView(store: store).padding(.horizontal, 20)
+                        Spacer()
+                    }
+                }
                 Spacer()
-            }.background(Color("#F0F7FC")).navigationTitle("Statistics").toolbar {
+                if viewStore.adModel != .none {
+                    HStack{
+                        GADNativeView(model: viewStore.adModel)
+                    }.frame(height: 116).cornerRadius(12).padding(.horizontal, 20)
+                }
+            }
+            .background(Color("#F0F7FC")).navigationTitle("Statistics").toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         viewStore.send(.pushRecordHistoryView)
@@ -209,6 +220,10 @@ struct ChartsView: View {
                         Image("charts_history")
                     }
                 }
+            }.onAppear {
+                debugPrint("[view] charts出现了")
+                GADUtil.share.disappear(.native)
+                GADUtil.share.load(.native)
             }
         }
     }

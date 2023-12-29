@@ -6,12 +6,13 @@
 //
 
 import SwiftUI
+import GADUtil
 import ComposableArchitecture
 
 struct ReminderReducer: Reducer {
     struct State: Equatable {
         static func == (lhs: ReminderReducer.State, rhs: ReminderReducer.State) -> Bool {
-            lhs.reminders == rhs.reminders && lhs.showDatePicker == rhs.showDatePicker
+            lhs.reminders == rhs.reminders && lhs.showDatePicker == rhs.showDatePicker && lhs.adModel == rhs.adModel
         }
         
         @UserDefault(key: "reminder")
@@ -19,6 +20,7 @@ struct ReminderReducer: Reducer {
         
         var showDatePicker: Bool = false
         var picker: DatePickerReducer.State = .init()
+        var adModel: GADNativeViewModel = .none
     }
     enum Action:Equatable {
         case newReminder
@@ -81,8 +83,8 @@ struct ReminderView: View {
     let store: StoreOf<ReminderReducer>
     var body: some View {
         WithViewStore(store, observe: {$0}) { viewStore in
-            VStack{
-                ZStack{
+            ZStack{
+                VStack{
                     List(viewStore.remindersValue.indices, id:\.self) { index in
                         VStack(spacing: 0){
                             HStack{
@@ -98,19 +100,28 @@ struct ReminderView: View {
                         })
                     }
                     Spacer()
-                    
-                    if viewStore.showDatePicker {
-                        ZStack{
-                            Color.black.opacity(0.3).ignoresSafeArea()
-                            DatePickerView(store: store.scope(state: \.picker, action: ReminderReducer.Action.picker))
-                                .frame(width: 343, height: 343)
-                        }
+                    if viewStore.adModel != .none {
+                        HStack{
+                            GADNativeView(model: viewStore.adModel)
+                        }.frame(height: 116).cornerRadius(12).padding(.horizontal, 20)
                     }
-                }.onAppear{
-                    viewStore.remindersValue.forEach {
-                        NotificationHelper.shared.appendReminder($0)
+                    Spacer()
+                }
+                
+                if viewStore.showDatePicker {
+                    ZStack{
+                        Color.black.opacity(0.3).ignoresSafeArea()
+                        DatePickerView(store: store.scope(state: \.picker, action: ReminderReducer.Action.picker))
+                            .frame(width: 343, height: 343)
                     }
                 }
+            }.onAppear{
+                debugPrint("[view] reminder出现了")
+                viewStore.remindersValue.forEach {
+                    NotificationHelper.shared.appendReminder($0)
+                }
+                GADUtil.share.disappear(.native)
+                GADUtil.share.load(.native)
             }.toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {

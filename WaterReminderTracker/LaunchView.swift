@@ -7,19 +7,21 @@
 
 import SwiftUI
 import Combine
+import GADUtil
 import ComposableArchitecture
 
 struct LaunchReducer: Reducer {
     enum CancelID {case timer}
     struct State: Equatable {
         var progress: Double = 0.0
-        var duration = 2.5
-        var isLaunched = false
+        var duration = 12.5
     }
     enum Action: Equatable {
         case start
         case stop
         case updateProgress
+        case launched
+        case none
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -33,7 +35,12 @@ struct LaunchReducer: Reducer {
             case .stop:
                 return .cancel(id: CancelID.timer)
             case .updateProgress:
-                state.updateProgress()
+                let publisher = state.updateProgress()
+                return .publisher {
+                    publisher
+                }
+            default:
+                break
             }
             return .none
         }
@@ -42,18 +49,35 @@ struct LaunchReducer: Reducer {
 
 extension LaunchReducer.State {
     
-    mutating func updateProgress() {
+    mutating func updateProgress() -> AnyPublisher<LaunchReducer.Action, Never> {
+        if progress == 1.0 {
+            return Just(LaunchReducer.Action.none).eraseToAnyPublisher()
+        }
         progress += 0.01 / duration
+        if GADUtil.share.isLoaded(.open), progress > 0.23 {
+            duration = 0.5
+        }
         if progress > 1.0 {
             progress = 1.0
-            isLaunched = true
+            let publisher = Future<LaunchReducer.Action, Never> { [progress = progress] promise in
+                GADUtil.share.show(.open) { _ in
+                    if progress == 1.0 {
+                        promise(.success(.launched))
+                    }
+                }
+            }
+            let pub = publisher.merge(with:(Just(LaunchReducer.Action.stop).eraseToAnyPublisher()))
+            return pub.eraseToAnyPublisher()
         }
+        return Just(LaunchReducer.Action.none).eraseToAnyPublisher()
     }
     
     mutating func initState() {
         progress = 0.0
-        duration = 2.5
-        isLaunched = false
+        duration = 12.5
+        GADUtil.share.load(.interstitial)
+        GADUtil.share.load(.open)
+        GADUtil.share.load(.native)
     }
 }
 
@@ -67,7 +91,10 @@ struct LaunchView: View {
                 Spacer()
                 Image("launch_title").padding(.bottom, 40)
                 ProgressView(value: viewStore.progress, total: 1.0).tint(Color("#0BD9FF")).padding(.bottom, 20).padding(.horizontal, 42)
-            }.background(Image("launch_bg").resizable().scaledToFill().ignoresSafeArea())
+            }.background(Image("launch_bg").resizable().scaledToFill().ignoresSafeArea()).onAppear(perform: {
+                debugPrint("---------------------")
+                viewStore.send(.start)
+            })
         }
     }
 }

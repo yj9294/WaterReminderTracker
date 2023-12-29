@@ -27,7 +27,6 @@ struct UserDefault<T: Codable> {
     }
 }
 
-
 extension UserDefaults {
     func setObject<T: Codable>(_ object: T?, forKey key: String) {
         let encoder = JSONEncoder()

@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import Combine
+import GADUtil
 import ComposableArchitecture
 
 struct DrinkRecordReducer: Reducer {
@@ -37,6 +39,7 @@ struct DrinkRecordReducer: Reducer {
         case item(State.Item)
         case saveButtonTapped
         case update([DrinkRecordReducer.Model])
+        case showAD
     }
     var body: some Reducer<State, Action> {
         BindingReducer()
@@ -51,6 +54,15 @@ struct DrinkRecordReducer: Reducer {
                 return .run { [records = state.recordsValue] send in
                     await send(.update(records))
                     await send(.pop)
+                }
+            case .showAD:
+                let publisher = Future<Action ,Never> { promise in
+                    GADUtil.share.show(.interstitial) { _ in
+                        promise(.success(.saveButtonTapped))
+                    }
+                }
+                return .publisher {
+                    publisher
                 }
             default:
                 break
@@ -126,7 +138,7 @@ struct DrinkRecordView: View {
                         }
                     }
                     Button {
-                        viewStore.send(.saveButtonTapped)
+                        viewStore.send(.showAD)
                     } label: {
                         Text("SAVE").font(.system(size: 24)).foregroundStyle(.white)
                     }.background(Image("record_button_bg")).padding(.top, 25)

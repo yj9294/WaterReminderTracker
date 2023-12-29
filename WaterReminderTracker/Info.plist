@@ -12,6 +12,10 @@
 	<string>2d948cc689573a28b41bc90757bf1229</string>
 	<key>FacebookDisplayName</key>
 	<string>WaterReminderTracker</string>
+	<key>GADApplicationIdentifier</key>
+	<string>ca-app-pub-9636118148743731~7275184319</string>
+	<key>GADIsAdManagerApp</key>
+	<true/>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSAllowsArbitraryLoads</key>

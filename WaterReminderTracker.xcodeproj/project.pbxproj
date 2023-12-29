@@ -24,6 +24,9 @@
 		C7D864B92B170D650098B607 /* DrinkGoalView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864B82B170D650098B607 /* DrinkGoalView.swift */; };
 		C7D864BB2B172C2A0098B607 /* DrinkRecordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864BA2B172C2A0098B607 /* DrinkRecordView.swift */; };
 		C7D864BD2B1747820098B607 /* DrinkRecordHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7D864BC2B1747820098B607 /* DrinkRecordHistoryView.swift */; };
+		C7E118882B3BD4BC00790E53 /* GADUtil in Frameworks */ = {isa = PBXBuildFile; productRef = C7E118872B3BD4BC00790E53 /* GADUtil */; };
+		C7E1188A2B3BD51600790E53 /* GADConfig.json in Resources */ = {isa = PBXBuildFile; fileRef = C7E118892B3BD51600790E53 /* GADConfig.json */; };
+		C7E1188C2B3BF0E900790E53 /* GADNativeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7E1188B2B3BF0E900790E53 /* GADNativeView.swift */; };
 		C7F5DF732B2C25D6009FDE63 /* FacebookAEM in Frameworks */ = {isa = PBXBuildFile; productRef = C7F5DF722B2C25D6009FDE63 /* FacebookAEM */; };
 		C7F5DF752B2C25D6009FDE63 /* FacebookBasics in Frameworks */ = {isa = PBXBuildFile; productRef = C7F5DF742B2C25D6009FDE63 /* FacebookBasics */; };
 		C7F5DF772B2C25D6009FDE63 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = C7F5DF762B2C25D6009FDE63 /* FacebookCore */; };
@@ -48,6 +51,8 @@
 		C7D864B82B170D650098B607 /* DrinkGoalView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkGoalView.swift; sourceTree = "<group>"; };
 		C7D864BA2B172C2A0098B607 /* DrinkRecordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkRecordView.swift; sourceTree = "<group>"; };
 		C7D864BC2B1747820098B607 /* DrinkRecordHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkRecordHistoryView.swift; sourceTree = "<group>"; };
+		C7E118892B3BD51600790E53 /* GADConfig.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = GADConfig.json; sourceTree = "<group>"; };
+		C7E1188B2B3BF0E900790E53 /* GADNativeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GADNativeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +61,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C7F5DF752B2C25D6009FDE63 /* FacebookBasics in Frameworks */,
+				C7E118882B3BD4BC00790E53 /* GADUtil in Frameworks */,
 				C7F5DF732B2C25D6009FDE63 /* FacebookAEM in Frameworks */,
 				C76C2D472B1610D0002DEDA1 /* ComposableArchitecture in Frameworks */,
 				C7F5DF772B2C25D6009FDE63 /* FacebookCore in Frameworks */,
@@ -84,8 +90,10 @@
 		C76C2D362B160462002DEDA1 /* WaterReminderTracker */ = {
 			isa = PBXGroup;
 			children = (
+				C7E118892B3BD51600790E53 /* GADConfig.json */,
 				C7D291382B18BBEE00A6B2D8 /* Info.plist */,
 				C76C2D372B160462002DEDA1 /* WaterReminderTrackerApp.swift */,
+				C7E1188B2B3BF0E900790E53 /* GADNativeView.swift */,
 				C7D864B62B16E6E00098B607 /* Helper.swift */,
 				C76C2D392B160462002DEDA1 /* ContentView.swift */,
 				C7D864A82B161D4F0098B607 /* LaunchView.swift */,
@@ -134,6 +142,7 @@
 				C7F5DF722B2C25D6009FDE63 /* FacebookAEM */,
 				C7F5DF742B2C25D6009FDE63 /* FacebookBasics */,
 				C7F5DF762B2C25D6009FDE63 /* FacebookCore */,
+				C7E118872B3BD4BC00790E53 /* GADUtil */,
 			);
 			productName = WaterReminderTracker;
 			productReference = C76C2D342B160462002DEDA1 /* WaterReminderTracker.app */;
@@ -166,6 +175,7 @@
 			packageReferences = (
 				C76C2D452B1610CE002DEDA1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				C7F5DF712B2C25D6009FDE63 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+				C7E118862B3BD4BC00790E53 /* XCRemoteSwiftPackageReference "GADUtil" */,
 			);
 			productRefGroup = C76C2D352B160462002DEDA1 /* Products */;
 			projectDirPath = "";
@@ -181,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7E1188A2B3BD51600790E53 /* GADConfig.json in Resources */,
 				C7D291352B18B3B700A6B2D8 /* DatePickerView.xib in Resources */,
 				C76C2D3F2B160464002DEDA1 /* Preview Assets.xcassets in Resources */,
 				C76C2D3C2B160464002DEDA1 /* Assets.xcassets in Resources */,
@@ -194,6 +205,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C7E1188C2B3BF0E900790E53 /* GADNativeView.swift in Sources */,
 				C7D291372B18B96500A6B2D8 /* NotificationUtil.swift in Sources */,
 				C7D864B32B16DDCB0098B607 /* ChartsView.swift in Sources */,
 				C76C2D3A2B160462002DEDA1 /* ContentView.swift in Sources */,
@@ -337,8 +349,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20231229;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterReminderTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
@@ -354,7 +367,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.trackerpromax.lovehabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -371,8 +384,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 20231229;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterReminderTracker/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
@@ -388,7 +402,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.trackerpromax.lovehabits;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -432,6 +446,14 @@
 				minimumVersion = 1.5.0;
 			};
 		};
+		C7E118862B3BD4BC00790E53 /* XCRemoteSwiftPackageReference "GADUtil" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/yj9294/GADUtil.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 		C7F5DF712B2C25D6009FDE63 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
@@ -447,6 +469,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = C76C2D452B1610CE002DEDA1 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
 			productName = ComposableArchitecture;
+		};
+		C7E118872B3BD4BC00790E53 /* GADUtil */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C7E118862B3BD4BC00790E53 /* XCRemoteSwiftPackageReference "GADUtil" */;
+			productName = GADUtil;
 		};
 		C7F5DF722B2C25D6009FDE63 /* FacebookAEM */ = {
 			isa = XCSwiftPackageProductDependency;

@@ -6,7 +6,8 @@
 //
 
 import SwiftUI
-
+import GADUtil
+import Combine
 import ComposableArchitecture
 
 struct DrinkReducer: Reducer {
@@ -25,6 +26,8 @@ struct DrinkReducer: Reducer {
 
         
         var degree: Double = 0
+        
+        var adModel: GADNativeViewModel = .none
     }
     enum Action: Equatable {
         case startRotation
@@ -32,6 +35,7 @@ struct DrinkReducer: Reducer {
         case updateRotation
         case pushToGoalView
         case pushToRecordView
+        case showAD
     }
     var body: some Reducer<State, Action> {
         Reduce{ state, action in
@@ -46,6 +50,16 @@ struct DrinkReducer: Reducer {
                 return .cancel(id: CancelID.rotation)
             case .updateRotation:
                 state.degree += 2.0
+            case .showAD:
+                GADUtil.share.load(.interstitial)
+                let publisher = Future<Action, Never> { promise in
+                    GADUtil.share.show(.interstitial) { _ in
+                        promise(.success(.pushToGoalView))
+                    }
+                }
+                return .publisher {
+                    publisher
+                }
             default:
                 break
             }
@@ -84,33 +98,41 @@ struct DrinkView: View {
     let store: StoreOf<DrinkReducer>
     var body: some View {
         WithViewStore(store, observe: {$0}) { viewStore in
-            VStack{
-                HStack{
+            ScrollView {
+                VStack{
+                    if viewStore.adModel != .none {
+                        HStack{
+                            GADNativeView(model: viewStore.adModel)
+                        }.frame(height: 116).cornerRadius(12).padding(.horizontal, 20)
+                    }
                     Spacer()
+                    ZStack(alignment: .bottom){
+                        Image("drink_bg")
+                        ZStack(alignment: .center){
+                            Image("drink_animation").rotationEffect(.degrees(viewStore.degree))
+                            Text(viewStore.progressString).foregroundStyle(.white).font(.system(size: 46))
+                        }.padding(.bottom, 111)
+                        HStack(spacing: 23){
+                            Spacer()
+                            DrinkButton(item: .record, goal: viewStore.goalString).onTapGesture {
+                                viewStore.send(.pushToRecordView)
+                            }
+                            DrinkButton(item: .goal, goal: viewStore.goalString).onTapGesture {
+                                viewStore.send(.showAD)
+                            }
+                            Spacer()
+                        }.padding(.bottom, 24)
+                    }.onAppear{
+                        viewStore.send(.startRotation)
+                    }.onDisappear{
+                        viewStore.send(.stopRotation)
+                    }
                 }
-                Spacer()
-                ZStack(alignment: .bottom){
-                    Image("drink_bg")
-                    ZStack(alignment: .center){
-                        Image("drink_animation").rotationEffect(.degrees(viewStore.degree))
-                        Text(viewStore.progressString).foregroundStyle(.white).font(.system(size: 46))
-                    }.padding(.bottom, 111)
-                    HStack(spacing: 23){
-                        Spacer()
-                        DrinkButton(item: .record, goal: viewStore.goalString).onTapGesture {
-                            viewStore.send(.pushToRecordView)
-                        }
-                        DrinkButton(item: .goal, goal: viewStore.goalString).onTapGesture {
-                            viewStore.send(.pushToGoalView)
-                        }
-                        Spacer()
-                    }.padding(.bottom, 24)
-                }.onAppear{
-                    viewStore.send(.startRotation)
-                }.onDisappear{
-                    viewStore.send(.stopRotation)
-                }
-            }.background(Color("#F0F7FC"))
+            }.background(Color("#F0F7FC")).onAppear {
+                debugPrint("[view] drink出现了")
+                GADUtil.share.disappear(.native)
+                GADUtil.share.load(.native)
+            }
         }
     }
     
