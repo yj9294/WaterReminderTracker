@@ -100,11 +100,11 @@ struct DrinkView: View {
         WithViewStore(store, observe: {$0}) { viewStore in
             ScrollView {
                 VStack{
-                    if viewStore.adModel != .none {
-                        HStack{
-                            GADNativeView(model: viewStore.adModel)
-                        }.frame(height: 116).cornerRadius(12).padding(.horizontal, 20)
-                    }
+//                    if viewStore.adModel != .none {
+//                        HStack{
+//                            GADNativeView(model: viewStore.adModel)
+//                        }.frame(height: 116).cornerRadius(12).padding(.horizontal, 20)
+//                    }
                     Spacer()
                     ZStack(alignment: .bottom){
                         Image("drink_bg")

@@ -59,15 +59,16 @@ extension LaunchReducer.State {
         }
         if progress > 1.0 {
             progress = 1.0
-            let publisher = Future<LaunchReducer.Action, Never> { [progress = progress] promise in
-                GADUtil.share.show(.open) { _ in
-                    if progress == 1.0 {
-                        promise(.success(.launched))
-                    }
-                }
-            }
-            let pub = publisher.merge(with:(Just(LaunchReducer.Action.stop).eraseToAnyPublisher()))
-            return pub.eraseToAnyPublisher()
+//            let publisher = Future<LaunchReducer.Action, Never> { [progress = progress] promise in
+//                GADUtil.share.show(.open) { _ in
+//                    if progress == 1.0 {
+//                        promise(.success(.launched))
+//                    }
+//                }
+//            }
+//            let pub = publisher.merge(with:(Just(LaunchReducer.Action.stop).eraseToAnyPublisher()))
+//            return pub.eraseToAnyPublisher()
+            return Just(LaunchReducer.Action.launched).eraseToAnyPublisher()
         }
         return Just(LaunchReducer.Action.none).eraseToAnyPublisher()
     }
